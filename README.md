@@ -35,17 +35,18 @@ http://repository-origin.spotify.com/pool/non-free/s/
 ##### Description
 NTFS drives mounted even with ```mount``` are mounted with ```drwx------ root root``` permission, resulting normal users unable to write to the drives.
 ##### Solution
-use [ntfs-3g](https://wiki.archlinux.org/index.php/NTFS-3G)
+Use [ntfs-3g](https://wiki.archlinux.org/index.php/NTFS-3G)
 
 
 #### Authentication required for mounting drives in graphical interfaces (nautilus, nemo etc.)
-##### Related links
+##### Solution
 https://bbs.archlinux.org/viewtopic.php?id=102050
 
 
 #### Change gnome-terminal to alternatives in Cinnamon
 ##### Solution
 https://bbs.archlinux.org/viewtopic.php?id=152157
+
 Create file ```/etc/polkit-1/rules.d/10-auth.rules``` with content:
 ```javascript
  polkit.addRule(function(action, subject) {
