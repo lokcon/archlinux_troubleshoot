@@ -5,6 +5,13 @@ A personal repository of various problems encountered when using Arch Linux
 * bluetooth
 * typing on desktop in cinnamon
 
+# Unsolved Problems (Macbook Air 2013)
+* Screen brightness
+* Switch fn fx keys
+* Touchpad settings
+* Close lid to sleep
+
+
 #### Gcin not working in some applications
 ##### Description
 Gcin seems only to work in firefox and cinnamon UI
@@ -56,3 +63,52 @@ Create file ```/etc/polkit-1/rules.d/10-auth.rules``` with content:
                }
            );
 ```
+
+## Solved Problems (Macbook Air 2013)
+
+This section specific to Macbook Air 7,2 which came early 2015
+
+#### Power Savings
+* Install powertop
+* Install tlp
+
+#### Bluetooth Headset
+##### Solution
+(from https://m157q.github.io/posts/2015/09/10/install-arch-linux-on-macbook-air-mid-2013/)
+https://wiki.archlinux.org/index.php/Bluetooth
+https://wiki.archlinux.org/index.php/Blueman
+https://wiki.archlinux.org/index.php/Bluetooth_headset
+* `sudo pacman -S bluez bluez-utils bluez-libs bluez-firmware blueman pulseaudio-bluetooth pulseaudio-alsa pavucontrol`
+* `sudo modprobe btusb`
+* `sudo systemctl enable bluetooth`
+* `sudo systemctl start bluetooth`
+* `blueman-manager`
+    * scan, pair, connect
+* `pavucontrol`
+    * Change sound channel to bluetooth headset
+* Sometimes the bluetooth device may be blocked
+    * use `rfkill list` to check if it is blocked.
+    * use `sudo rfkill unblock bluetooth` to unblock.
+
+
+#### Wireless
+##### Solution (for system installation)
+Consider using an Android to USB tether internet
+
+##### Solution
+Install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) from **AUR**
+Reboot might be required for the driver to work
+
+https://wiki.archlinux.org/index.php/broadcom_wireless
+
+#### No Sound after installing alsa-utils
+##### Solution
+https://wiki.archlinux.org/index.php/MacBook#Audio
+
+Add the following to `/etc/asound.conf`
+```
+defaults.pcm.card 1
+defaults.pcm.device 0
+defaults.ctl.card 1
+```
+No reboot is required.
