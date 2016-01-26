@@ -3,13 +3,16 @@ A personal repository of various problems encountered when using Arch Linux
 
 ## Unsolved problems
 * bluetooth
-* typing on desktop in cinnamon
 
 ## Unsolved Problems (Macbook Air 2013)
-* Screen brightness
-* Switch fn fx keys
-* Touchpad settings
-* Close lid to sleep
+#### Cannot adjustscreen brightness
+#### Switching of fn fx keys
+#### Touchpad settings in Gnome Shell
+#### Close lid to sleep
+#### Blank screen after wake up
+#### Power Savings
+* Install powertop
+* Install tlp
 
 
 #### Gcin not working in some applications
@@ -68,10 +71,6 @@ Create file ```/etc/polkit-1/rules.d/10-auth.rules``` with content:
 ## Solved Problems (Macbook Air 2013)
 
 This section specific to Macbook Air 7,2 which came early 2015
-
-#### Power Savings
-* Install powertop
-* Install tlp
 
 #### Bluetooth Headset
 ##### Solution
