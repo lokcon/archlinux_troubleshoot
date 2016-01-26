@@ -5,7 +5,7 @@ A personal repository of various problems encountered when using Arch Linux
 * bluetooth
 * typing on desktop in cinnamon
 
-# Unsolved Problems (Macbook Air 2013)
+## Unsolved Problems (Macbook Air 2013)
 * Screen brightness
 * Switch fn fx keys
 * Touchpad settings
@@ -17,13 +17,14 @@ A personal repository of various problems encountered when using Arch Linux
 Gcin seems only to work in firefox and cinnamon UI
 ##### (Possible) Solution
 After removing some gnome packages bunbled with gnome/cinnamon, gcin suddenly works again.
+
 It still does not work in the newest version of Spotify.
 
 #### Touchpad not configurable in Cinnamon
 ##### Description
 Touchpad cannot be diabled and configured through settings in Cinnamon
 ##### (Possible) Solution
-Touchpad is indeed working through ```libinput``` driver, and can be confiured and disabled through command-line utilities.
+Touchpad is indeed working through ```libinput``` driver, and can be configured and disabled through command-line utilities.
 Maybe work that out with Cinnamon / Replace libinput with Synaptics driver?
 
 ## Solved Problems
