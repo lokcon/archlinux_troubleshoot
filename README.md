@@ -68,6 +68,12 @@ Create file ```/etc/polkit-1/rules.d/10-auth.rules``` with content:
            );
 ```
 
+#### Use (or not use) Nemo to show desk icons
+##### Solution
+`gsettings set org.nemo.desktop show-desktop-icons false`
+
+https://wiki.archlinux.org/index.php/Nemo#Show_.2F_hide_desktop_icons
+
 ## Solved Problems (Macbook Air 2013)
 
 This section specific to Macbook Air 7,2 which came early 2015
