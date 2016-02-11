@@ -74,11 +74,38 @@ Create file ```/etc/polkit-1/rules.d/10-auth.rules``` with content:
 
 https://wiki.archlinux.org/index.php/Nemo#Show_.2F_hide_desktop_icons
 
+#### A2DP Sink does not load for bluetooth headset
+#### Description
+When a bluetooth headset is connected to the system, a2dp_sink failed loading. A result of this is the sound quality is very bad and mono.
+#### Solution
+
+https://bbs.archlinux.org/viewtopic.php?id=197482
+```
+Bug and possible solution: actually I found a bug in that make the headset unusable, it seems that the pulse audio module: module-bluetooth-discover works only if started after the X11 session is up. So I have a workaround.
+
+Edit the file:
+/etc/pulse/default.pa
+and comment out (with an # at the beginning of the line) the following line:
+#load-module module-bluetooth-discover
+
+now edit the file:
+/usr/bin/start-pulseaudio-x11
+and after the lines:
+   if [ x”$SESSION_MANAGER” != x ] ; then
+        /usr/bin/pactl load-module module-x11-xsmp “display=$DISPLAY session_manager=$SESSION_MANAGER” > /dev/null
+    fi
+
+add the following line:
+    /usr/bin/pactl load-module module-bluetooth-discover
+
+This way the Pulse audio’s Bluetooth modules will not be downloaded at boot time but after x11 is started.
+```
+
 ## Solved Problems (Macbook Air 2013)
 
 This section specific to Macbook Air 7,2 which came early 2015
 
-#### Bluetooth Headset
+#### Bluetooth Headset cannot be connected
 ##### Solution
 (from https://m157q.github.io/posts/2015/09/10/install-arch-linux-on-macbook-air-mid-2013/)
 https://wiki.archlinux.org/index.php/Bluetooth
