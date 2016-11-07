@@ -130,7 +130,8 @@ Consider using an Android to USB tether internet
 
 #### Solution
 Install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) from **AUR**
-Reboot might be required for the driver to work
+
+Reboot might be required for the driver to work.
 
 https://wiki.archlinux.org/index.php/broadcom_wireless
 
@@ -145,3 +146,27 @@ defaults.pcm.device 0
 defaults.ctl.card 1
 ```
 No reboot is required.
+
+### Swapping of `Super` and `Alt`
+https://wiki.archlinux.org/index.php/Apple_Keyboard
+```
+echo options hid_apple swap_opt_cmd=1 | sudo tee -a /etc/modprobe.d/hid_apple.conf
+```
+
+### The ``(backtick)` and `~` keys output `<` and `>`
+https://wiki.archlinux.org/index.php/Apple_Keyboard
+
+Add
+```
+options hid_apple iso_layout=0
+```
+to `/etc/modprobe.d/hid_apple.conf` and run `mkinitcpio -p` linux as root.
+
+### Swap `F<numbers>` and `media` keys
+https://wiki.archlinux.org/index.php/Apple_Keyboard
+
+Add
+```
+options hid_apple fnmode=2
+```
+to `/etc/modprobe.d/hid_apple.conf` and run `mkinitcpio -p` linux as root.
