@@ -125,8 +125,20 @@ https://wiki.archlinux.org/index.php/Bluetooth_headset
 
 
 ### Wireless
-#### Solution (for system installation)
+#### Solution (Temporary)
 Consider using an Android to USB tether internet
+
+Connect Android device to computer using USB.
+
+Check the interface using
+```
+ip link
+```
+
+Then run DHCP on the interface
+```
+dhcpd <interface_name>
+```
 
 #### Solution
 Install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) from **AUR**
