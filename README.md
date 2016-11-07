@@ -101,7 +101,14 @@ add the following line:
 This way the Pulse audio’s Bluetooth modules will not be downloaded at boot time but after x11 is started.
 ```
 
+### Changing typematic delay and rate
+#### Solution (for console)
+
+#### Solution (for Xorg)
+https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Adjusting_typematic_delay_and_rate
+
 ## Solved Problems (Macbook Air 2013)
+https://wiki.archlinux.org/index.php/Keyboard_configuration_in_console#Adjusting_typematic_delay_and_rate
 
 This section specific to Macbook Air 7,2 which came early 2015
 
